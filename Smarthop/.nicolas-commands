@@ -13,7 +13,7 @@ function lets-work() {
   then
   else
     cd desktop && cd Hop/hopreact && code . && cd ~
-    cd desktop && cd desktop/Hop/hopelectron && code . && cd ~
+    cd desktop && cd Hop/hopelectron && code . && cd ~
   fi
 
 }
