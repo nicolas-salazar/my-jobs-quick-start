@@ -1,3 +1,5 @@
 #!/bin/bash
 cp .nicolas-commands ~/.nicolas-commands
 echo 'alias lets-work="source ~/.nicolas-commands && lets-work $1 $2 $3 $4 $5"' >>  ~/.zshrc
+bold=$(tput bold)
+echo "${bold}Done! 😀✨"
