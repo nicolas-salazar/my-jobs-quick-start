@@ -1,0 +1,23 @@
+#!/bin/bash
+
+function lets-work() {
+  # Opens slack if --slack flag is added
+  if [[ "$*" == *--no-teams* ]]
+  then
+  else
+    cd /Applications && open 'Microsoft Teams.app' && cd ~
+  fi
+  
+  # Opens VSCode with instatoolz app setup if --app is added
+  if [[ "$*" == *--app* ]]
+  then
+    cd desktop && cd NovaComp/Appsketiers/instatoolz-app && code . && cd ~
+  fi
+
+  # Opens VSCode with instatoolz web setup if --web is added
+  if [[ "$*" == *--web* ]]
+  then
+    cd desktop && cd NovaComp/Appsketiers/instatoolz-fe && code . && cd ~
+  fi
+
+}
