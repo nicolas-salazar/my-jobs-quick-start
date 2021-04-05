@@ -1,0 +1,29 @@
+#!/bin/bash
+
+function lets-work() {
+  # Opens slack if --slack flag is added
+  if [[ "$*" == *--no-slack* ]]
+  then
+  else
+    cd /Applications && open Slack.app && cd ~
+  fi
+  
+  # Opens VSCode with browser setup if --browser is added
+  if [[ "$*" == *--no-app* ]]
+  then
+  else
+    cd desktop && cd Nordstrom/dextr-ui/frontend && code . && cd ~
+    osascript -e 'tell app "Terminal"
+        do script "cd desktop && cd Nordstrom/dextr-ui/mock-server && npm start" 
+    end tell'
+
+    if [[ "$*" == *--no-front* ]]
+    then
+    else
+      osascript -e 'tell app "Terminal"
+          do script "cd desktop && cd Nordstrom/dextr-ui/frontend && npm start" 
+      end tell'
+    fi
+    
+  fi
+}
