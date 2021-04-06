@@ -12,6 +12,7 @@ function lets-work() {
   if [[ "$*" == *--no-app* ]]
   then
   else
+    cd desktop && cd Nordstrom/dextr-ui/frontend && code . && cd ~
     osascript -e 'tell app "Terminal"
         do script "cd desktop && cd Nordstrom/dextr-ui/mock-server && npm start" 
     end tell'

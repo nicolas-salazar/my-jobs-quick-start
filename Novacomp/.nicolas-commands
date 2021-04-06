@@ -8,16 +8,24 @@ function lets-work() {
     cd /Applications && open 'Microsoft Teams.app' && cd ~
   fi
   
-  # Opens VSCode with instatoolz app setup if --app is added
-  if [[ "$*" == *--app* ]]
-  then
-    cd desktop && cd NovaComp/Appsketiers/instatoolz-app && code . && cd ~
-  fi
-
   # Opens VSCode with instatoolz web setup if --web is added
   if [[ "$*" == *--web* ]]
   then
     cd desktop && cd NovaComp/Appsketiers/instatoolz-fe && code . && cd ~
+    osascript -e 'tell app "Terminal"
+        do script "cd desktop && cd NovaComp/Appsketiers/instatoolz-fe && yarn start" 
+    end tell'
+    return
+  fi
+
+  # Opens VSCode with instatoolz app setup if --app is added
+  if [[ "$*" == *--no-app* ]]
+  then
+  else
+    cd desktop && cd NovaComp/Appsketiers/instatoolz-app && code . && cd ~
+    osascript -e 'tell app "Terminal"
+        do script "cd desktop && cd NovaComp/Appsketiers/instatoolz-app && yarn run ios" 
+    end tell'
   fi
 
 }
