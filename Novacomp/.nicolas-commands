@@ -13,7 +13,7 @@ function lets-work() {
   then
     cd desktop && cd NovaComp/Appsketiers/instatoolz-fe && code . && cd ~
     osascript -e 'tell app "Terminal"
-        do script "cd desktop && cd NovaComp/Appsketiers/instatoolz-fe && npm start" 
+        do script "cd desktop && cd NovaComp/Appsketiers/instatoolz-fe && yarn start" 
     end tell'
     return
   fi
