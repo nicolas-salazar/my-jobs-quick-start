@@ -9,7 +9,7 @@ function lets-work() {
   fi
   
   # Opens VSCode with instatoolz web setup if --web is added
-  if [[ "$*" == *--web* ]]
+  if [[ "$*" == *--instatoolz-web* ]]
   then
     cd desktop && cd NovaComp/Appsketiers/instatoolz-fe && code . && cd ~
     osascript -e 'tell app "Terminal"
@@ -19,12 +19,20 @@ function lets-work() {
   fi
 
   # Opens VSCode with instatoolz app setup if --app is added
-  if [[ "$*" == *--no-app* ]]
+  if [[ "$*" == *--instatoolz-app* ]]
   then
-  else
     cd desktop && cd NovaComp/Appsketiers/instatoolz-app && code . && cd ~
     osascript -e 'tell app "Terminal"
         do script "cd desktop && cd NovaComp/Appsketiers/instatoolz-app && yarn run ios" 
+    end tell'
+  fi
+
+  # Opens VSCode with core app setup if --app is added
+  if [[ "$*" == *--core-app* ]]
+  then
+    cd desktop && cd NovaComp/Appsketiers/core_app && code . && cd ~
+    osascript -e 'tell app "Terminal"
+        do script "cd desktop && cd NovaComp/Appsketiers/core_app && npm run ios" 
     end tell'
   fi
 
