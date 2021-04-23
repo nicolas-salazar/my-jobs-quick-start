@@ -32,7 +32,7 @@ function lets-work() {
   then
     cd desktop && cd NovaComp/Appsketiers/core_app && code . && cd ~
     osascript -e 'tell app "Terminal"
-        do script "cd desktop && cd NovaComp/Appsketiers/core_app && npm run ios" 
+        do script "cd desktop && cd NovaComp/Appsketiers/core_app && yarn run ios" 
     end tell'
   fi
 
