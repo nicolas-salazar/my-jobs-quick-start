@@ -1,7 +1,13 @@
 #!/bin/bash
 
 function lets-work() {
-  if [[ "$*" == *-teams* ]]
+  if [[ "$*" == *--no-slack* ]]
+  then
+  else
+    cd /Applications && open 'Slack.app' && cd ~
+  fi
+
+  if [[ "$*" == *--teams* ]]
   then
     cd /Applications && open 'Microsoft Teams.app' && cd ~
   fi
