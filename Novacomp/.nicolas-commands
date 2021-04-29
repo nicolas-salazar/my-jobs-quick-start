@@ -1,14 +1,11 @@
 #!/bin/bash
 
 function lets-work() {
-  # Opens slack if --slack flag is added
-  if [[ "$*" == *--no-teams* ]]
+  if [[ "$*" == *-teams* ]]
   then
-  else
     cd /Applications && open 'Microsoft Teams.app' && cd ~
   fi
   
-  # Opens VSCode with instatoolz web setup if --web is added
   if [[ "$*" == *--instatoolz-web* ]]
   then
     cd desktop && cd NovaComp/Appsketiers/instatoolz-fe && code . && cd ~
@@ -18,7 +15,6 @@ function lets-work() {
     return
   fi
 
-  # Opens VSCode with instatoolz app setup if --app is added
   if [[ "$*" == *--instatoolz-app* ]]
   then
     cd desktop && cd NovaComp/Appsketiers/instatoolz-app && code . && cd ~
@@ -27,12 +23,19 @@ function lets-work() {
     end tell'
   fi
 
-  # Opens VSCode with core app setup if --app is added
   if [[ "$*" == *--core-app* ]]
   then
     cd desktop && cd NovaComp/Appsketiers/core_app && code . && cd ~
     osascript -e 'tell app "Terminal"
         do script "cd desktop && cd NovaComp/Appsketiers/core_app && yarn run ios" 
+    end tell'
+  fi
+
+  if [[ "$*" == *--swimspot-app* ]]
+  then
+    cd desktop && cd NovaComp/Appsketiers/swimspot-apps && code . && cd ~
+    osascript -e 'tell app "Terminal"
+        do script "cd desktop && cd NovaComp/Appsketiers/swimspot-apps && yarn run ios" 
     end tell'
   fi
 
