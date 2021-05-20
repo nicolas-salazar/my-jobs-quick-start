@@ -13,6 +13,7 @@ function lets-work() {
   then
   else
     cd desktop && cd Nordstrom/dextr-ui/frontend && code . && cd ~
+    cd desktop && cd Nordstrom/dextr-ui/mock-server && code . && cd ~
     osascript -e 'tell app "Terminal"
         do script "cd desktop && cd Nordstrom/dextr-ui/mock-server && npm start" 
     end tell'
