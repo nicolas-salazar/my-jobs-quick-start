@@ -1,0 +1,20 @@
+#!/bin/bash
+
+function lets-work() {
+  # Opens slack if --slack flag is added
+  if [[ "$*" == *--no-slack* ]]
+  then
+  else
+    cd /Applications && open Slack.app && cd ~
+  fi
+  
+  # Opens VSCode with browser setup if --browser is added
+  if [[ "$*" == *--no-app* ]]
+  then
+  else
+    cd desktop && cd Rivian/inapps-basecamp-fe && code . && cd ~
+    osascript -e 'tell app "Terminal"
+        do script "cd desktop && cd Rivian/inapps-basecamp-fe && npm start" 
+    end tell'
+  fi
+}
