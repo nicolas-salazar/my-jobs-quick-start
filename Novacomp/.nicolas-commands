@@ -14,34 +14,42 @@ function lets-work() {
   
   if [[ "$*" == *--instatoolz-web* ]]
   then
-    cd desktop && cd NovaComp/Appsketiers/instatoolz-fe && code . && cd ~
+    cd desktop && cd NovaComp/instatoolz-fe && code . && cd ~
     osascript -e 'tell app "Terminal"
-        do script "cd desktop && cd NovaComp/Appsketiers/instatoolz-fe && yarn start" 
+        do script "cd desktop && cd NovaComp/instatoolz-fe && yarn start" 
     end tell'
     return
   fi
 
   if [[ "$*" == *--instatoolz-app* ]]
   then
-    cd desktop && cd NovaComp/Appsketiers/instatoolz-app && code . && cd ~
+    cd desktop && cd NovaComp/instatoolz-app && code . && cd ~
     osascript -e 'tell app "Terminal"
-        do script "cd desktop && cd NovaComp/Appsketiers/instatoolz-app && yarn run ios" 
+        do script "cd desktop && cd NovaComp/instatoolz-app && yarn run ios" 
     end tell'
   fi
 
   if [[ "$*" == *--core-app* ]]
   then
-    cd desktop && cd NovaComp/Appsketiers/core_app && code . && cd ~
+    cd desktop && cd NovaComp/core_app && code . && cd ~
     osascript -e 'tell app "Terminal"
-        do script "cd desktop && cd NovaComp/Appsketiers/core_app && yarn run ios" 
+        do script "cd desktop && cd NovaComp/core_app && yarn run ios" 
     end tell'
   fi
 
   if [[ "$*" == *--swimspot-app* ]]
   then
-    cd desktop && cd NovaComp/Appsketiers/swimspot-apps && code . && cd ~
+    cd desktop && cd NovaComp/swimspot-apps && code . && cd ~
     osascript -e 'tell app "Terminal"
-        do script "cd desktop && cd NovaComp/Appsketiers/swimspot-apps && yarn run ios" 
+        do script "cd desktop && cd NovaComp/swimspot-apps && yarn run ios" 
+    end tell'
+  fi
+
+  if [[ "$*" == *--gymbuddy-app* ]]
+  then
+    cd desktop && cd NovaComp/gymbuddy-app && code . && cd ~
+    osascript -e 'tell app "Terminal"
+        do script "cd desktop && cd NovaComp/gymbuddy-app && yarn run ios" 
     end tell'
   fi
 
