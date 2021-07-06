@@ -1,0 +1,18 @@
+#!/bin/bash
+
+function lets-work() {
+  if [[ "$*" == *--no-slack* ]]
+  then
+  else
+    cd /Applications && open 'Slack.app' && cd ~
+  fi
+
+  if [[ "$*" == *--inertia-app* ]]
+  then
+    cd desktop && cd Taringa/inertia-app && code . && cd ~
+    osascript -e 'tell app "Terminal"
+        do script "cd desktop && cd Taringa/inertia-app && npm run storybook" 
+    end tell'
+    return
+  fi
+}
