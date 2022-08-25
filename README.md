@@ -2,7 +2,7 @@
 
 Locate on the **company's** folder you want to set up:
 
-    cd Smarthop
+    cd Taringa
 
 Run *.main* script using this command:
 
